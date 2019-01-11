@@ -1,0 +1,83 @@
+#footer {
+	background-color: $footer-background-color;
+
+	.text-box {
+		padding: 38px 43px 139px 83px;
+		
+		.link-holder {
+			padding-bottom: 15px;
+			
+			a {
+				@include animate (color);
+				
+				color: $footer-link-color;
+				text-decoration: none;
+				font-size: 30px;
+				font-weight: 600;
+
+				&:hover {
+					color: $footer-link-color-hover;
+				}
+
+				@include media ('<phone') {
+					font-size: 19px;
+				}
+			}
+
+			@include media('<tablet') {
+				padding-bottom: 42px;
+			}
+
+			@include media('<phone') {
+				padding-bottom: 8px;
+			}
+		}
+
+		.text-holder {
+			column-count: 2;
+
+			p {
+				padding-right: 40px;
+				margin-bottom: 30px;
+
+				&:last-child,
+				&:nth-last-child(2) {
+					@include media('<tablet') {
+						display: none;
+					}
+				}
+				
+				@include media('<desktop') {
+					padding-right: 55px;
+				}
+
+				@include media('<tablet') {
+					font-size: 22px;
+					padding-right: 0;
+				}
+
+				@include media('<phone') {
+					font-size: 13.5px;
+				}
+			}
+
+			@include media('<tablet') {
+				column-count: 1;
+			}
+		}
+
+		@include media('<desktop') {
+			padding: 52px 43px 65px 80px;
+		}
+
+		@include media('<tablet') {
+			padding: 52px 77px 80px;
+			max-height: 892px;
+			overflow: hidden;
+		}
+
+		@include media('<phone') {
+			padding: 17px 20px 80px 38px;
+		}
+	}
+}

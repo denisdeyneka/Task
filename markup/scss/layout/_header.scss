@@ -1,0 +1,128 @@
+#header {
+	background-color: #373c3f;
+	line-height: normal;
+
+	#nav {
+		background-color: #373c3f;
+
+		ul {
+			list-style: none;
+			font-size: 15px;
+			color: white;
+			padding: 39px 0 42px 54px;
+			margin: 0;
+			
+			li {
+				float: left;
+				padding: 0 15px;
+
+				a {
+					@include animate(color);
+
+					text-decoration: none;
+					color: white;
+
+					&:hover {
+						color:#16b1c4;
+					}
+				}
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	.banner {
+	    background: linear-gradient(to bottom, #19b4c6 0%,#0ba0b6 100%);
+
+		.heading-holder {
+			max-width: 815px;
+			padding-left: 82px;
+			padding-top: 217px;
+
+			h1 {
+				line-height: normal;
+				font-size: 60px;
+				font-weight: 600;
+				color: #fff;
+				word-spacing: 12px;
+				margin-bottom: 36px;
+
+				@include media ('<tablet') {
+					font-size: 40px;
+				}
+
+				@include media ('<phone') {
+					font-size: 22px;
+				}
+			}
+			
+			.text-holder {
+				padding-bottom: 142px;
+
+				a {
+					font-size: 34px;
+					color: #86d1dc;
+					text-decoration: none;
+					display: block;			//<---!!!!!
+
+					&:hover {
+						color: $white;
+					}
+				
+					@include media ('<tablet') {
+						font-size: 22px;
+					}
+
+					@include media ('<phone') {
+						font-size: 14px
+					}
+				}
+
+				span {
+					color: #fff;
+					float: right;
+					font: 700 36px/1.2 'Quicksand', sans-serif;
+
+					&:hover {
+						color: #86d1dc;
+					}
+
+					@include media ('<tablet') {
+						font-size: 22px
+					}
+
+					@include media ('<phone') {
+						font-size: 14px
+					}
+				}
+
+				@include media ('<tablet') {
+					padding-bottom: 85px;
+				}
+
+				@include media ('<phone') {
+					padding-bottom: 35px;
+				}
+			}
+
+			@include media ('<desktop') {
+				padding-top: 187px;
+			}
+
+			@include media ('<tablet') {
+				padding: 108px 133px 0 53px;
+			}
+
+			@include media ('<phone') {
+				padding: 50px 34px 0 30px;
+			}
+		}
+	}
+}
