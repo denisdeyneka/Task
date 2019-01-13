@@ -5,7 +5,6 @@ jQuery(function(){
 
 // fade galleries init
 
-
 // mobile menu init
 function initMobileNav() {
 	jQuery('body').mobileNav({
@@ -13,7 +12,6 @@ function initMobileNav() {
 		menuOpener: '.menu-opener'
 	});
 }
-
 
 /*
  * Simple Mobile Navigation
@@ -120,8 +118,6 @@ function initMobileNav() {
 		});
 	};
 }(jQuery));
-
-
 
 /*! Hammer.JS - v2.0.4 - 2014-09-28
  * http://hammerjs.github.io/
