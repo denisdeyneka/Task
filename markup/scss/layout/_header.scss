@@ -1,40 +1,115 @@
 #header {
-	background-color: #373c3f;
+	background-color: $dark-gray;
 	line-height: normal;
 
 	#nav {
-		background-color: #373c3f;
+		font-size: 15px;
+	}
 
-		ul {
-			list-style: none;
-			font-size: 15px;
-			color: white;
-			padding: 39px 0 42px 54px;
-			margin: 0;
+	.drop {
+		float: left;
+		margin: 0;
+		list-style: none;
+		color: $white;
+		padding: 39px 0 42px 54px;
+		
+		li {
+			float: left;
+			padding: 0 15px;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			@include media ('<tablet') {
+				float: none;
+				padding: 0;
+				background-color: $dark-gray;
+			}
+		}
+
+		a {
+			@include animate(color);
 			
-			li {
-				float: left;
-				padding: 0 15px;
+			color: $white;
+			text-decoration: none;
 
-				a {
-					@include animate(color);
+			&:hover {
+				color:#16b1c4;
 
-					text-decoration: none;
-					color: white;
-
-					&:hover {
-						color:#16b1c4;
-					}
-				}
-
-				&:first-child {
-					padding-left: 0;
-				}
-
-				&:last-child {
-					padding-right: 0;
+				@include media('<tablet') {
+					background-color: $gray;
+					border-color: $gray;
 				}
 			}
+
+			@include media('<tablet') {
+				display: block;
+				padding: 10px 10px 10px 25px;
+				margin: -1px 0 0;
+				border: 1px solid $gray;
+			}
+		}
+
+		@include media ('<tablet') {
+			width: 100%;
+			position:absolute;
+			top: 69px;
+			right:0;
+			opacity:0;
+			z-index: -2;
+			transition: opacity .3s linear, z-index .3s linear;
+			box-shadow:  0 1px 3px rgba(0, 0, 0, .15);
+			text-align: left;
+			padding: 0;
+			border-top: 1px solid #f59a07;
+			visibility: hidden;
+		}
+	}
+	
+	.menu-opener {
+		display:none;
+		float:right;
+		width:45px;
+		height:25px;
+		position:relative;
+		top: 10px;
+		right: 25px;
+		border-radius:3px;
+		text-indent:-9999px;
+		overflow: hidden;
+		outline: none;
+		
+		&:before,
+		&:after,
+		& span {
+			background: $white;
+			border-radius:4px;
+			position:absolute;
+			top:14px;
+			left:20%;
+			right:20%;
+			height:3px;
+			margin-top:-2px;
+			transition:all 0.2s linear;
+		}
+		
+		&:before,
+		&:after {
+			content:'';
+			top:6px;
+		}
+		
+		&:after{
+			top:22px;
+		}
+
+		@include media('<tablet') {
+			display:block;
 		}
 	}
 
@@ -55,11 +130,12 @@
 				margin-bottom: 36px;
 
 				@include media ('<tablet') {
-					font-size: 40px;
+					font-size: 33px;
 				}
 
 				@include media ('<phone') {
-					font-size: 22px;
+					font-size: 18px;
+					margin-bottom: 16px;
 				}
 			}
 			
@@ -70,10 +146,10 @@
 					font-size: 34px;
 					color: #86d1dc;
 					text-decoration: none;
-					display: block;			//<---!!!!!
+					display: block;			
 
 					&:hover {
-						color: $white;
+						color: inherit;
 					}
 				
 					@include media ('<tablet') {
@@ -81,7 +157,7 @@
 					}
 
 					@include media ('<phone') {
-						font-size: 14px
+						font-size: 10px
 					}
 				}
 
@@ -91,7 +167,7 @@
 					font: 700 36px/1.2 'Quicksand', sans-serif;
 
 					&:hover {
-						color: #86d1dc;
+						color: inherit;
 					}
 
 					@include media ('<tablet') {
@@ -101,6 +177,10 @@
 					@include media ('<phone') {
 						font-size: 14px
 					}
+				}
+
+				&:hover {
+					color: #088ca5;
 				}
 
 				@include media ('<tablet') {
@@ -117,11 +197,11 @@
 			}
 
 			@include media ('<tablet') {
-				padding: 108px 133px 0 53px;
+				padding: 108px 170px 0 53px;
 			}
 
 			@include media ('<phone') {
-				padding: 50px 34px 0 30px;
+				padding: 50px 55px 0 26px;
 			}
 		}
 	}
